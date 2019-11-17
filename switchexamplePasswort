@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+  int login, pw;
+
+  printf("please enter your ID:\n");
+  scanf("%d", &login);
+  switch(login) {
+      case 187:
+          printf("enter your password:\n");
+          scanf("%d",&pw);
+          switch(pw){
+              case 3001:
+                  printf("Welcome dear Programmer\n");
+                  break;
+              default:
+                  printf("incorrect password");
+                  break;
+          }
+          break;
+      default:
+          printf("incorrect ID");
+          break;
+  }
+return 0;
+}
