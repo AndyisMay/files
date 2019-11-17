@@ -1,0 +1,106 @@
+//Created on 25.10.2019 Author: AndreAigner Name: Praktika2.1
+#include <stdio.h>
+#include <time.h>
+
+int j = 1;
+
+
+int schaltjahrA (j) {
+    if (j % 4 == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int schaltjahrB (j)
+{	if(j %100 == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int schaltjahrC (j)
+{	if(j %400 == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int counter1 = 0;
+int counter2 = 0;
+
+time_t s1, e1;
+time_t s2, e2;
+
+int main()
+{
+    time(&s1);
+    while(j<=1000000000)
+    {
+
+        int A = schaltjahrA(j);
+        int B = schaltjahrB(j);
+        int C = schaltjahrC(j);
+
+
+        if (A&&!(B&&!C))
+        {
+            counter1 += 1;
+            j += 1;
+        }
+        else
+        {
+            j += 1;
+        }
+
+    }
+    time(&e1);
+    double t1 = difftime(s1,e1);
+
+    printf("In 1Mrd. Jahren gibt es %d Schaltjahre\n   time: %.2fsec\n",counter1,-t1);
+
+
+
+    int j = 1;
+
+    time(&s2);
+    while(j<=1000000000)
+    {
+
+        int A = schaltjahrA(j);
+        int B = schaltjahrB(j);
+        int C = schaltjahrC(j);
+
+
+        if ((C	||	!B)	&&	A)
+        {
+            counter2 += 1;
+            j += 1;
+        }
+        else
+        {
+            j += 1;
+        }
+
+    }
+    time(&e2);
+    double t2 = difftime(s2,e2);
+
+
+    printf("In 1Mrd. Jahren gibt es %d Schaltjahre\n   time: %.2fsec\n",counter2,-t2);
+
+
+    return 0;
+}
