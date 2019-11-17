@@ -1,0 +1,28 @@
+//Created on 25.10.2019 Author: AndreAigner Name: Praktika2.1
+#include <stdio.h>
+
+
+int quersumme(a)
+{
+int q = 0;
+
+while (a > 0)
+{       q += a % 10;
+        a /= 10;
+}
+return q;
+}
+
+int main(void) {
+    setvbuf(stdout, NULL, _IONBF, 0);
+
+    printf("Bitte geben sie die zu berechnende Zahl ein\n");
+    int a; //die Variable a bezeichnet die Eingabe durch die Konsole
+    scanf("%d", &a);
+
+    int b = quersumme(a);
+
+    printf("Die Quersumme der eingegebenen Zahl ist: %d \n", b);
+
+    return 0;
+}
