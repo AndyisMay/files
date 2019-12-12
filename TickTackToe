@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+int var;get;
+int one=49;two=50;three=51;four=52;five=53;six=54;seven=55;eight=56;nine=57;
+int end=0;
+int win;
+void display(){
+    printf("%c %c %c\n%c %c %c\n%c %c %c\n\n",one,two,three,four,five,six,seven,eight,nine);
+}
+
+void test(i) {
+    if (i == 1) { one = var; }
+    if (i == 2) { two = var; }
+    if (i == 3) { three = var; }
+    if (i == 4) { four = var; }
+    if (i == 5) { five = var; }
+    if (i == 6) { six = var; }
+    if (i == 7) { seven = var;}
+    if (i == 8) { eight = var;}
+    if (i == 9) { nine = var;}
+}
+
+int test_for_end(){
+    if(one==two==three){end=1;}
+    if(four==five==six){end=1;}
+    if(seven==eight==nine){end=1;}
+    if(one==five==nine){end=1;}
+    if(three==five==seven){end=1;}
+}
+int playertestOne(){
+    if(one==two==three==88){win=1;}
+    if(four==five==six==88){win=1;}
+    if(seven==eight==nine==88){win=1;}
+    if(one==five==nine==88){win=1;}
+    if(three==five==seven==88){win=1;}
+}
+int playertestTwo(){
+    if(one==two==three==79){win=1;}
+    if(four==five==six==79){win=1;}
+    if(seven==eight==nine==79){win=1;}
+    if(one==five==nine==79){win=1;}
+    if(three==five==seven==79){win=1;}
+}
+
+
+
+int main(void){
+    display();
+    for(int i = 0; i < 10; i++){
+        if(i%2==0){printf("Player 1:\n");var=88;}
+        if(i%2!=0){printf("Player 2:\n");var=79;}
+        scanf("%d",&get);
+        test(get);
+        display();
+        test_for_end();
+        if(end==1){playertestOne();playertestTwo();
+        if(win==1){printf("Congratulations Player 1!\n");exit(1);}
+        if(win==2){printf("Congratulations Player 2!\n");exit(1);}
+        }
+    }
+    return 0;
+}
