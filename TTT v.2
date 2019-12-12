@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+int var;get;
+int one=49;two=50;three=51;four=52;five=53;six=54;seven=55;eight=56;nine=57;
+int end=0;
+int i;
+void display(){
+    printf("%c %c %c\n%c %c %c\n%c %c %c\n\n",one,two,three,four,five,six,seven,eight,nine);
+}
+
+void test(i) {
+    if (i == 1) { one = var; }
+    if (i == 2) { two = var; }
+    if (i == 3) { three = var; }
+    if (i == 4) { four = var; }
+    if (i == 5) { five = var; }
+    if (i == 6) { six = var; }
+    if (i == 7) { seven = var;}
+    if (i == 8) { eight = var;}
+    if (i == 9) { nine = var;}
+}
+
+int test_for_end(){
+    if(one==(two==three)){end=1;}
+    if(four==(five==six)){end=2;}
+    if(seven==(eight==nine)){end=3;}
+    if(one==(five==nine)){end=4;} //diagonal
+    if(three==(five==seven)){end=5;}  //diagonal
+    if(one==(four==seven)){end=6;}
+    if(two==(five==eight)){end=7;}
+    if(three==(six==nine)){end=8;}
+}
+
+void test_win(int f){
+    switch(f) {
+        case 1:
+            if (one == 88) { printf("Player 1 won!\n"); i=11;}
+            else { printf("Player 2 won!\n"); i=11;}
+            break;
+        case 2:
+            if (four == 88) { printf("Player 1 won!\n"); i=11; }
+            else { printf("Player 2 won!\n"); i=11;}
+            break;
+        case 3:
+            if (seven == 88) { printf("Player 1 won!\n"); i=11;}
+            else { printf("Player 2 won!\n"); i=11;}
+            break;
+        case 4:
+            if (one == 88) { printf("Player 1 won!\n"); i=11;}
+            else { printf("Player 2 won!\n"); i=11;}
+            break;
+        case 5:
+            if (three == 88) { printf("Player 1 won!\n"); i=11;}
+            else { printf("Player 2 won!\n"); i=11;}
+            break;
+        case 6:
+            if (one == 88) { printf("Player 1 won!\n"); i=11;}
+            else { printf("Player 2 won!\n"); i=11;}
+            break;
+        case 7:
+            if (two == 88) { printf("Player 1 won!\n"); i=11;}
+            else { printf("Player 2 won!\n"); i=11;}
+            break;
+        case 8:
+            if (three == 88) { printf("Player 1 won!\n"); i=11;}
+            else { printf("Player 2 won!\n"); i=11;}
+            break;
+        default:
+            break;
+    }
+}
+
+int main(void){
+    display();
+    for(i = 0; i < 10; i++) {
+        if (i % 2 == 0) {
+            printf("Player 1:\n");
+            var = 88;
+        }
+        if (i % 2 != 0) {
+            printf("Player 2:\n");
+            var = 79;
+        }
+        scanf("%d", &get);
+        test(get);
+        display();
+        test_for_end();
+        test_win(end);
+    }
+    printf("Das Spiel ist vorbei!\n");
+    return 0;
+}
