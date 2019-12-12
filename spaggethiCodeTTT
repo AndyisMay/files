@@ -1,0 +1,180 @@
+#include <stdio.h>
+#include <stdlib.h>
+//p2=X=88, p1=O=79
+int one=1;two=2;three=3;four=4;five=5;six=6;seven=7;eight=8;nine=9;
+int move = 0;
+char get;
+
+int restart(void) {
+    one = 1;
+    two = 2;
+    three = 3;
+    four = 4;
+    five = 5;
+    six = 6;
+    seven = 7;
+    eight = 8;
+    nine = 9;
+}
+    void compare(i)
+    {
+        switch (i) {
+            case 1:
+                if (move % 2 == 0) {
+                    one = 79;
+                } else {
+                    one = 88;
+                }
+                break;
+
+            case 2:
+                if (move % 2 == 0) {
+                    two = 79;
+                } else {
+                    two = 88;
+                }
+                break;
+            case 3:
+                if (move % 2 == 0) {
+                    three = 79;
+                } else {
+                    three = 88;
+                }
+                break;
+            case 4:
+                if (move % 2 == 0) {
+                    four = 79;
+                } else {
+                    four = 88;
+                }
+                break;
+            case 5:
+                if (move % 2 == 0) {
+                    five = 79;
+                } else if(move %2 == 1)
+                {
+                    five = 88;
+                }
+                break;
+            case 6:
+                if (move % 2 == 0) {
+                    six = 79;
+                } else {
+                    six = 88;
+                }
+                break;
+            case 7:
+                if (move % 2 == 0) {
+                    seven = 79;
+                } else {
+                    seven = 88;
+                }
+                break;
+            case 8:
+                if (move % 2 == 0) {
+                    eight = 79;
+                } else {
+                    eight = 88;
+                }
+                break;
+            case 9:
+                if (move % 2 == 0) {
+                    nine = 79;
+                } else {
+                    nine = 88;
+                }
+                break;
+        }
+    }
+
+    void display()
+    {
+
+        if (one < 10) {
+            printf("%d ", one);
+        } else {
+            printf("%c ", one);
+        }
+
+        if (two < 10) {
+            printf("%d ", two);
+        } else {
+            printf("%c ", two);
+        }
+
+        if (three < 10) {
+            printf("%d\n", three);
+        } else {
+            printf("%c\n"), three;
+        }
+
+        if (four < 10) {
+            printf("%d ", four);
+        } else {
+            printf("%c ", four);
+        }
+
+        if (five < 10) {
+            printf("%d ", five);
+        } else {
+            printf("%c ", five);
+        }
+
+        if (six < 10) {
+            printf("%d\n", six);
+        } else {
+            printf("%c\n", six);
+        }
+
+        if (seven < 10) {
+            printf("%d ", seven);
+        } else {
+            printf("%c ", seven);
+        }
+
+        if (eight < 10) {
+            printf("%d ", eight);
+        } else {
+            printf("%c ", eight);
+        }
+
+        if (four < 10) {
+            printf("%d\n", nine);
+        } else {
+            printf("%c\n\n", nine);
+        }
+    }
+
+int gametest(){
+    if(one==two==three==79){
+        printf("Player 1 won!\n");return 1;
+    }
+    if(one==two==three==88){
+        printf("Player 2 won!\n");return 1; //noch unfertig ausgeführt
+    }
+}
+
+void main()
+{
+    setvbuf(stdout, NULL, _IONBF, 0);
+    restart();
+    display();
+
+    while(move<10){
+
+        if(move %2 == 0){
+            printf("Player 1:\n");
+            scanf("d",&get);
+
+        }
+        else{
+            printf("Player 2:\n");
+            scanf("%d",&get);
+
+        }
+    compare(get);
+    display();
+    if(gametest()==1){printf("Spielende!"); exit(3);}
+    move++;}
+
+    }
